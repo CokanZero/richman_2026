@@ -36,7 +36,7 @@ const TEXT = {
 
 export default function UsabilityPage() {
   const router = useRouter()
-  const [lang, setLang] = useState('EN')
+  const [lang, setLang]            = useState('EN')
   const [number, setNumber]        = useState('')
   const [word, setWord]            = useState('')
   const [option, setOption]        = useState('')
@@ -48,7 +48,11 @@ export default function UsabilityPage() {
     applyTheme(type)
   }, [])
 
+  // 모든 필드가 채워져야 버튼 활성화
+  const isComplete = number.trim() !== '' && word.trim() !== '' && option !== '' && finalNumber.trim() !== ''
+
   const handleSubmit = () => {
+    if (!isComplete) return
     localStorage.setItem('exp_result', JSON.stringify({ number, word, option, finalNumber }))
     router.push('/complete')
   }
@@ -70,14 +74,24 @@ export default function UsabilityPage() {
 
         <div className="form-group">
           <label className="form-label">{t.label1}</label>
-          <input className="form-input" type="number" placeholder={t.placeholder1}
-            value={number} onChange={(e) => setNumber(e.target.value)} />
+          <input
+            className="form-input"
+            type="number"
+            placeholder={t.placeholder1}
+            value={number}
+            onChange={(e) => setNumber(e.target.value)}
+          />
         </div>
 
         <div className="form-group">
           <label className="form-label">{t.label2}</label>
-          <input className="form-input" type="text" placeholder={t.placeholder2}
-            value={word} onChange={(e) => setWord(e.target.value)} />
+          <input
+            className="form-input"
+            type="text"
+            placeholder={t.placeholder2}
+            value={word}
+            onChange={(e) => setWord(e.target.value)}
+          />
         </div>
 
         <div className="form-group">
@@ -99,13 +113,29 @@ export default function UsabilityPage() {
 
         <div className="form-group">
           <label className="form-label">{t.label4}</label>
-          <input className="form-input" type="number" placeholder={t.placeholder4}
-            value={finalNumber} onChange={(e) => setFinalNum(e.target.value)} />
+          <input
+            className="form-input"
+            type="number"
+            placeholder={t.placeholder4}
+            value={finalNumber}
+            onChange={(e) => setFinalNum(e.target.value)}
+          />
         </div>
       </div>
 
       <div className="bottom-btn">
-        <button className="btn-primary" onClick={handleSubmit}>{t.submitBtn}</button>
+        <button
+          className="btn-primary"
+          onClick={handleSubmit}
+          disabled={!isComplete}
+          style={{
+            opacity: isComplete ? 1 : 0.4,
+            cursor: isComplete ? 'pointer' : 'not-allowed',
+            transition: 'opacity 0.2s',
+          }}
+        >
+          {t.submitBtn}
+        </button>
       </div>
     </div>
   )
