@@ -43,7 +43,7 @@ export default function InstructionPage() {
       </div>
 
       <div className="bottom-btn">
-        <button className="btn-primary" onClick={() => router.push('/task1')}>
+        <button className="btn-primary" onClick={() => router.push('/reading')}>
           {t.beginBtn}
         </button>
       </div>
