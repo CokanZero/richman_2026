@@ -5,8 +5,8 @@ import { applyTheme, loadSettings } from '../../lib/theme'
 
 // ✅ 실제 설문 링크로 교체하세요
 const SURVEY_LINKS = {
-  EN: 'https://your-survey-link-english.com',
-  KO: 'https://your-survey-link-korean.com',
+  EN: 'https://docs.google.com/forms/d/e/1FAIpQLScVljr3LcIKTukuAcGcsNY0MDE5vBQRlQR1I5kwieEJo7L_BQ/viewform',
+  KO: 'https://docs.google.com/forms/d/e/1FAIpQLSfHwfc_yGBr-SW39cb5BSTo3-4um0HS5BOH-OgQaY6jPDq1vA/viewform',
 }
 
 const TEXT = {

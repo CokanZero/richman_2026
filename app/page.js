@@ -21,10 +21,10 @@ const TEXT = {
 }
 
 const TYPES = [
-  { value: '1', label: 'Type 1 (Light)' },
-  { value: '2', label: 'Type 2 (Dark)' },
-  { value: '3', label: 'Type 3 (Light)' },
-  { value: '4', label: 'Type 4 (Dark)' },
+  { value: '1', label: 'Type 1 (BE-LM)' },
+  { value: '2', label: 'Type 2 (BE-DM)' },
+  { value: '3', label: 'Type 3 (DE-LM)' },
+  { value: '4', label: 'Type 4 (DE-DM)' },
 ]
 
 function HomeInner() {
