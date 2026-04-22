@@ -21,10 +21,10 @@ const TEXT = {
 }
 
 const TYPES = [
-  { value: '1', label: 'Type 1 (BE-LM)' },
-  { value: '2', label: 'Type 2 (BE-DM)' },
-  { value: '3', label: 'Type 3 (DE-LM)' },
-  { value: '4', label: 'Type 4 (DE-DM)' },
+  { value: '1', label: 'Type A (BE-LM)' },
+  { value: '2', label: 'Type B (BE-DM)' },
+  { value: '3', label: 'Type C (DE-LM)' },
+  { value: '4', label: 'Type D (DE-DM)' },
 ]
 
 function HomeInner() {
