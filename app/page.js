@@ -88,7 +88,7 @@ function HomeInner() {
             <span className="select-arrow">▼</span>
           </div>
 
-          <div className="lang-toggle">
+          <div className="lang-toggle" style={{ display: 'none' }}>
             <span className={`lang-label ${!isKO ? 'active' : 'inactive'}`}>EN</span>
             <button className="toggle-track" onClick={handleLangToggle}>
               <span className={`toggle-thumb ${isKO ? 'on' : ''}`} />
